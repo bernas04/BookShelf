@@ -1,0 +1,60 @@
+
+/* body {
+    width: 430px;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+} */
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.lupinha{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    padding-right: 300px;
+    transform: translateY(-50%);
+}
+
+.searchContainer {
+    padding-top: 150px;
+    width: 35%;
+    padding-left: 700px;
+}
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+
+
+.searchInput {
+    width: 100%;
+    padding: 12px 24px;
+
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    
+    color: #575756;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 1px solid #575756;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+}
+    
