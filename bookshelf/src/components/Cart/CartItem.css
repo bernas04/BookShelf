@@ -1,0 +1,209 @@
+.cart{
+    color: #000000;
+    /* margin-top: 2%; */
+    /* height: 50%;
+    width: 80%;
+    margin-left: 10%; */
+    /* margin-top: 5%; */
+
+}
+.cart-title{
+    padding-top: 150px;
+    padding-left: 435px;
+    padding-bottom:50px;
+    font-size:30px;
+   
+}
+.bookImage{
+    height: 18vmin;
+    pointer-events: none;
+    display:flex;
+}
+.first{
+    padding-right: 40px;
+    width: 10%;
+}
+.second{
+    width: 80%;
+    padding-left: 15px;
+}
+.third{
+    width: 10%;
+
+}
+
+
+.cart-item{
+    padding: 50px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    flex: 1;
+    width: 60%;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    margin: 0px 435px;
+    cursor: pointer;
+    background-color: #EFEAE4;
+
+    
+}
+.cart-item2{
+    
+    padding: 50px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    flex: 1;
+    width: 60%;
+    height: 80px;
+    display: inline-block;
+    justify-content: center;
+    margin: 20px 435px;
+    cursor: pointer;
+    background-color: #EFEAE4;
+    
+}
+
+
+
+
+.bookTitle2{
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    /* margin: 10px 0px; */
+    text-align: left;
+   
+}
+
+
+
+
+.bookAuthor2{
+    font-size: 20px;
+    
+    font-weight: 400;
+    text-align: left;
+    padding-bottom: 10px;
+
+}
+
+.bookPrice2{
+    font-size: 20px;
+    padding-bottom: 15px;
+    font-weight: 200;
+    text-align: left;
+
+}
+
+
+.butaozinho{
+    padding-top:230px;
+}
+
+.butaozinho2{
+    padding-top:30px;
+    padding-left: 82%;
+
+}
+
+
+
+/* CSS */
+.button-3 {
+    appearance: none;
+    background-color: #AF9C8C;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .button-3:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .button-3:hover {
+    background-color: #c7c7bb;
+  }
+  
+  .button-3:focus {
+    box-shadow: rgba(142, 68, 61, 1)    0 0 0 3px;
+    outline: none;
+  }
+
+
+
+
+
+
+
+
+
+/* CSS */
+.button-4 {
+    appearance: none;
+    width: 200px;
+    background-color:  #AF9C8C  ;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .button-4:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .button-4:hover {
+    background-color: #c7c7bb;
+  }
+  
+  .button-4:focus {
+    box-shadow: rgba(142, 68, 61, 1)   0 0 0 3px;
+    outline: none;
+  }
+
+  .total-price{
+    font-size:20px;
+    padding-top:30px;
+    padding-left: 82%;
+    color: #fb607f;
+
+  }
+  
+
+
+

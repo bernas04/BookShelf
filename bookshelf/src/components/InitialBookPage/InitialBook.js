@@ -18,7 +18,7 @@ function InitiaBook() {
                 <div className="bookAuthor">Victoria Aveyard</div>
                 <div className="bookPrice">16.0$</div>
                 <div className="buttonT">
-                <button className="button-3" onClick={sayHello}>Add to Basket</button>
+                <button className="button-32" onClick={sayHello}>Add to Basket</button>
                 </div>
                 
             </div>
@@ -31,7 +31,7 @@ function InitiaBook() {
                 <div className="bookAuthor">Victoria Aveyard</div>
                 <div className="bookPrice">16.0$</div>
                 <div className="buttonT">
-                <button className="button-3" onClick={sayHello}>Add to Basket</button>
+                <button className="button-32" onClick={sayHello}>Add to Basket</button>
                 </div>
                 
             </div>
@@ -43,7 +43,7 @@ function InitiaBook() {
                 <div className="bookAuthor">Victoria Aveyard</div>
                 <div className="bookPrice">16.0$</div>
                 <div className="buttonT">
-                <button className="button-3" onClick={sayHello}>Add to Basket</button>
+                <button className="button-32" onClick={sayHello}>Add to Basket</button>
                 </div>
                 
                 
@@ -56,7 +56,7 @@ function InitiaBook() {
                 <div className="bookAuthor">Victoria Aveyard</div>
                 <div className="bookPrice">16.0$</div>
                 <div className="buttonT">
-                <button className="button-3" onClick={sayHello}>Add to Basket</button>
+                <button className="button-32" onClick={sayHello}>Add to Basket</button>
                 </div>
                 
             </div>
@@ -67,7 +67,7 @@ function InitiaBook() {
                 <div className="bookAuthor">Victoria Aveyard</div>
                 <div className="bookPrice">16.0$</div>
                 <div className="buttonT">
-                <button className="button-3" onClick={sayHello}>Add to Basket</button>
+                <button className="button-32" onClick={sayHello}>Add to Basket</button>
                 </div>
                 
             </div>
@@ -81,7 +81,7 @@ function InitiaBook() {
             <div className="bookAuthor">Victoria Aveyard</div>
             <div className="bookPrice">16.0$</div>
             <div className="buttonT">
-            <button className="button-3" onClick={sayHello}>Add to Basket</button>
+            <button className="button-32" onClick={sayHello}>Add to Basket</button>
             </div>
             
         </div>
@@ -94,7 +94,7 @@ function InitiaBook() {
             <div className="bookAuthor">Victoria Aveyard</div>
             <div className="bookPrice">16.0$</div>
             <div className="buttonT">
-            <button className="button-3" onClick={sayHello}>Add to Basket</button>
+            <button className="button-32" onClick={sayHello}>Add to Basket</button>
             </div>
             
         </div>
@@ -106,7 +106,7 @@ function InitiaBook() {
             <div className="bookAuthor">Victoria Aveyard</div>
             <div className="bookPrice">16.0$</div>
             <div className="buttonT">
-            <button className="button-3" onClick={sayHello}>Add to Basket</button>
+            <button className="button-32" onClick={sayHello}>Add to Basket</button>
             </div>
             
             
@@ -119,7 +119,7 @@ function InitiaBook() {
             <div className="bookAuthor">Victoria Aveyard</div>
             <div className="bookPrice">16.0$</div>
             <div className="buttonT">
-            <button className="button-3" onClick={sayHello}>Add to Basket</button>
+            <button className="button-32" onClick={sayHello}>Add to Basket</button>
             </div>
             
         </div>
@@ -130,7 +130,7 @@ function InitiaBook() {
             <div className="bookAuthor">Victoria Aveyard</div>
             <div className="bookPrice">16.0$</div>
             <div className="buttonT">
-            <button className="button-3" onClick={sayHello}>Add to Basket</button>
+            <button className="button-32" onClick={sayHello}>Add to Basket</button>
             </div>
             
         </div>

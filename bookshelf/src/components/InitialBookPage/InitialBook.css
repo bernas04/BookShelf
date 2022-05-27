@@ -84,9 +84,9 @@
 
 
 /* CSS */
-.button-3 {
+.button-32 {
   appearance: none;
-  background-color: #2F3E46;
+  background-color: #AF9C8C;
   border: 1px solid rgba(27, 31, 35, .15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -109,28 +109,17 @@
   white-space: nowrap;
 }
 
-.button-3:focus:not(:focus-visible):not(.focus-visible) {
+
+.button-34:focus:not(:focus-visible):not(.focus-visible) {
   box-shadow: none;
   outline: none;
 }
 
-.button-3:hover {
-  background-color: #510D0A;
+.button-32:hover {
+  background-color: #c7c7bb;
 }
 
-.button-3:focus {
+.button-32:focus {
   box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
   outline: none;
-}
-
-.button-3:disabled {
-  background-color: #94d3a2;
-  border-color: rgba(27, 31, 35, .1);
-  color: rgba(255, 255, 255, .8);
-  cursor: default;
-}
-
-.button-3:active {
-  background-color: #510D0A;
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }

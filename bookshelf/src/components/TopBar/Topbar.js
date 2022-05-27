@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './Topbar.css';
-import { BsAlignBottom, BsPersonFill } from "react-icons/bs";
-
+import { useNavigate } from 'react-router-dom';
+import  {BsPersonFill, BsCartFill, BsFillDoorOpenFill} from "react-icons/bs";
 
 
 const handleLogout = () => {
@@ -9,7 +9,15 @@ const handleLogout = () => {
   window.location.href = '/';
 };
 
+ 
+
 function Topbar() {
+
+  const navigate = useNavigate();
+
+  function handleClick(){
+    navigate("/basket")
+  }
   const [state, setstate] = useState(false);
   const [state2, setstate2] = useState(false);
 
@@ -52,16 +60,15 @@ function Topbar() {
           <div className="components2">Best Sellers</div>
         </div>
 
-
-        <div className="dropdown">
-            <div className="dropdown-menu" onMouseEnter={showDropdown2} onMouseLeave={hideDropdown2}>
+        
+        <div className="dropdown2">
+            <div className="dropdown-menu2" onMouseEnter={showDropdown2} onMouseLeave={hideDropdown2}>
               
-              <div className="components"><BsPersonFill style={{position: 'absolute'}} size="35px" color="white"/></div>
-              {state2?(<ul className="dropdown-list" onMouseEnter={showDropdown2}>
-                <ul className="items">Drama</ul>
-                <ul className="items">Romance</ul>
-                <ul className="items">Fiction</ul>
-                <ul className="items">Manga</ul>
+              <div className="components2"><BsPersonFill style={{position: 'absolute'}} size="35px" color="white"/></div>
+              {state2?(<ul className="dropdown-list2" onMouseEnter={showDropdown2}>
+                <button className="items" onClick={handleClick}><BsCartFill style={{right: '10px',}}/>Check Card</button>
+                <ul className="items"><BsPersonFill />Perfil</ul>
+                <ul className="items"><BsFillDoorOpenFill  />Sign Out</ul>
 
               </ul>):
               null}
