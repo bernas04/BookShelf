@@ -15,7 +15,7 @@
    
 }
 .bookImage{
-    height: 18vmin;
+    height: 14vmin;
     pointer-events: none;
     display:flex;
 }
@@ -24,26 +24,27 @@
     width: 10%;
 }
 .second{
-    width: 80%;
+    width: 60%;
     padding-left: 15px;
 }
 .third{
-    width: 10%;
+    width: 30%;
 
 }
 
 
 .cart-item{
+    border-bottom: 1px solid rgba(255,255,255,.25);
     padding: 50px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     flex: 1;
     width: 60%;
-    height: 280px;
+    height: 200px;
     display: flex;
     justify-content: center;
     margin: 0px 435px;
     cursor: pointer;
-    background-color: #EFEAE4;
+    background-color: #e3e4e0;
 
     
 }
@@ -58,7 +59,7 @@
     justify-content: center;
     margin: 20px 435px;
     cursor: pointer;
-    background-color: #EFEAE4;
+    background-color:  #e3e4e0;
     
 }
 
@@ -86,7 +87,7 @@
 
 }
 
-.bookPrice2{
+.bookDescription{
     font-size: 20px;
     padding-bottom: 15px;
     font-weight: 200;
@@ -96,12 +97,23 @@
 
 
 .butaozinho{
-    padding-top:230px;
+    padding-top:30px;
+    padding-left: 80%;
+
 }
 
 .butaozinho2{
     padding-top:30px;
     padding-left: 82%;
+
+}
+.price{
+  padding-top:120px;
+  padding-left: 80%;
+  weight: 400;
+  font-size:20px;
+  color: #fb607f;
+
 
 }
 

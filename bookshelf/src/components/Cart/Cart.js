@@ -27,11 +27,36 @@ function Cart()  {
                             <div className="second">
                                 <div className="bookTitle2">Red Queen</div>
                                 <div className="bookAuthor2">Victoria Aveyard</div>
-                                <div className="bookPrice2">16.0$</div>
+                                <div className="bookDescription">Red Queen tells the story of Mare Barrow, a 17 year old girl who lives in a world where status depends on the colour of your blood. </div>
                             
                             </div>
                             <div className='third'>
+                                <div className="price">16.0$
+                                </div>
                                 <div className="butaozinho">
+                                    
+                                    <button className="button-3" onClick={removeItem}>Remove</button>
+
+                                </div>
+                            
+                            </div> 
+                        </div>
+                        <div className="cart-item">
+                            <div className= "first">
+                            <div><img src={book1} className="bookImage" alt="logo" /> </div>
+
+                            </div>
+                            <div className="second">
+                                <div className="bookTitle2">Red Queen</div>
+                                <div className="bookAuthor2">Victoria Aveyard</div>
+                                <div className="bookDescription">Red Queen tells the story of Mare Barrow, a 17 year old girl who lives in a world where status depends on the colour of your blood. </div>
+                            
+                            </div>
+                            <div className='third'>
+                                <div className="price">16.0$
+                                </div>
+                                <div className="butaozinho">
+                                    
                                     <button className="button-3" onClick={removeItem}>Remove</button>
 
                                 </div>
@@ -40,7 +65,7 @@ function Cart()  {
                         </div>
                         <div className="cart-item2">
                             <div className="total-price">
-                                Total:16.0$ 
+                                Total:32.0$ 
                             </div>
                             <div className="butaozinho2">
                                 
