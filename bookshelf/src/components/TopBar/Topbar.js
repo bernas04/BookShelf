@@ -18,6 +18,9 @@ function Topbar() {
   function handleClick(){
     navigate("/basket")
   }
+  function handleClick2(){
+    navigate("/profile")
+  }
   const [state, setstate] = useState(false);
   const [state2, setstate2] = useState(false);
 
@@ -67,7 +70,7 @@ function Topbar() {
               <div className="components2"><BsPersonFill style={{position: 'absolute'}} size="35px" color="white"/></div>
               {state2?(<ul className="dropdown-list2" onMouseEnter={showDropdown2}>
                 <button className="items" onClick={handleClick}><BsCartFill style={{right: '10px',}}/>Check Card</button>
-                <ul className="items"><BsPersonFill />Perfil</ul>
+                <ul className="items" onClick={handleClick2}><BsPersonFill />Perfil</ul>
                 <ul className="items"><BsFillDoorOpenFill  />Sign Out</ul>
 
               </ul>):

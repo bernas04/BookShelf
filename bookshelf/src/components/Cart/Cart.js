@@ -16,7 +16,7 @@ function Cart()  {
         return (
             <div className="inicial-cart">
                 <Topbar />
-                <div className="main">
+                <div className="main2">
                     <div className="cart">
                         <div className="cart-title">Your Basket</div>
                         <div className="cart-item">
