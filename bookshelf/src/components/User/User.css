@@ -1,19 +1,16 @@
 .main{
-    /* width: 2200px;  */
+    width: 2200px; 
     background-color: #e3e4e0; 
     align-items: center;
 
 }
 .dash-user{
-    width: 2200px; 
-    
-    
-   
+   display: flex;
 }
 
 
 .dashItem-user1{
-    display: inline-block;
+    
     background-color: #ffffff;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     flex: 1;
@@ -24,16 +21,15 @@
     cursor: pointer;
     padding-top: 0px;
     /* width: 400px; */
-    width: 20%;
+    width: 15%;
     margin-left: 100px;
-    padding-left: 100px;
+    /* padding-left: 100px; */
     
 }
 .dashItem-user2{
-    display: inline-block;
     background-color: #ffffff;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    flex: 1;
+    flex: 2;
     height: 600px;
     margin: 0px 20px;
     padding: 30px;
@@ -41,7 +37,7 @@
     cursor: pointer;
     padding-top: 0px;
     /* width: 1400px; */
-    width: 60%;
+    width: 70%;
     
 }
 .dashItem-user{
@@ -55,10 +51,12 @@
 
 
 
+
 .userImage{
     padding-top: 30px;
-    padding-right: 60px;
+    /* padding-right: 60px; */
     border-radius: 50%;
+    padding-bottom: 40px;
     height: 18vmin;
     pointer-events: none;
     display: block;
@@ -66,10 +64,172 @@
     margin-right: auto;
 }
 .userName{
-    padding-top: 20px;
+    padding-top: 30px;
     font-size: 25px;
     font-weight: 600;
+    /* padding-left: 180px; */
     /* margin: 10px 0px; */
+    text-align: center;
     
    
 }
+.user-email{
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: 350;
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+.user-address{
+    padding-top: 8px;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.user-title{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    font-size: 27px;
+    font-weight: 600;
+    /* padding-left: 180px; */
+    /* margin: 10px 0px; */
+
+}
+.user-title2{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    font-size: 27px;
+    font-weight: 600;
+    /* padding-left: 180px; */
+    /* margin: 10px 0px; */
+
+}
+.upcoming-orders{
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+
+
+.user-first{
+    /* flex: 1; */
+    float:left;
+    width: 7%;
+    padding-left: 20px;
+
+}
+.user-second{
+    /* flex: 1; */
+    width: 60%;
+    float:left;
+    
+}
+.user-third{
+    /* flex: 1; */
+    width: 25%;
+    float:right;
+    
+}
+
+.user-bookImage{
+    height: 7vmin;
+    pointer-events: none;
+}
+
+
+.user-bookTitle{
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    /* margin: 10px 0px; */
+    text-align: left;
+   
+}
+
+
+
+
+.user-bookAuthor{
+    font-size: 16px;
+    
+    font-weight: 400;
+    text-align: left;
+    padding-bottom: 10px;
+
+}
+
+.returing-orders{
+
+}
+
+.wrapper-upcomming-orders{
+
+    
+    
+    
+}
+.border{
+    padding-top: 20px;
+    border-top: 1px solid black;
+
+}
+
+.user-arrivalData{
+    padding-bottom: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    /* margin: 10px 0px; */
+    text-align: left;
+    color: #fb607f;
+
+}
+
+
+
+/* CSS */
+.button-5 {
+    appearance: none;
+    width: 200px;
+    background-color:  #6D1919  ;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .button-5:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .button-5:hover {
+    background-color: #7F423D;
+  }
+  
+  .button-5:focus {
+    box-shadow: rgba(142, 68, 61, 1)   0 0 0 3px;
+    outline: none;
+  }
+
+  .user-button{
+      padding-top: 10px;
+  }
+

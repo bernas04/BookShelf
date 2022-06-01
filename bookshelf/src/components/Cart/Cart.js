@@ -21,7 +21,7 @@ function Cart()  {
                         <div className="cart-title">Your Basket</div>
                         <div className="cart-item">
                             <div className= "first">
-                            <div><img src={book1} className="bookImage" alt="logo" /> </div>
+                            <div><img src={book1} className="user-bookImage" alt="logo" /> </div>
 
                             </div>
                             <div className="second">
