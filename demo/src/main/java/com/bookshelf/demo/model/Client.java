@@ -16,7 +16,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class User {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -37,11 +37,11 @@ public class User {
     private String email;
 
     
-    public User(){
+    public Client(){
 
     }
 
-    public User(String name, String password, Date birthDate, String email) {
+    public Client(String name, String password, Date birthDate, String email) {
         this.name = name;
         this.password = password;
         this.birthDate = birthDate;

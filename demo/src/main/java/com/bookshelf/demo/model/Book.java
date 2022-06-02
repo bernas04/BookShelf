@@ -24,7 +24,7 @@ public class Book {
     private Time return_time;
 
     @ManyToOne
-    private User user;
+    private Client user;
 
     @ManyToOne
     private Store store;
@@ -85,11 +85,11 @@ public class Book {
         this.return_time = return_time;
     }
 
-    public User getUser() {
+    public Client getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Client user) {
         this.user = user;
     }
 

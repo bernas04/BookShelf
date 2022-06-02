@@ -25,7 +25,7 @@ public class Address {
     private Store store;
 
     @OneToOne
-    private User user;
+    private Client user;
 
     public Address(String road, String city, String country, String zipcode) {
         this.road = road;
@@ -74,11 +74,11 @@ public class Address {
         this.store = store;
     }
 
-    public User getUser() {
+    public Client getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Client user) {
         this.user = user;
     }
 
