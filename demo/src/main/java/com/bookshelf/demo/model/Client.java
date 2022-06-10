@@ -1,55 +1,78 @@
 package com.bookshelf.demo.model;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-@Data
+
+
 @Entity
-public class Client {
+@Table(name="client")
+public class Client{
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String name, password;
 
-    private Date birthDate;
+    @Column(name = "name")
+    private String name;
 
-    @OneToOne
-    private Address address;
+    @Column(name="password")
+    @JsonIgnore
+    private String password;
 
-    @OneToMany
-    private List<Book> books;
-
-
-
-    @Column(unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
-    
-    public Client(){
 
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
+    private Set<Address> address;
 
-    public Client(String name, String password, Date birthDate, String email) {
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Purchase> purchases;
+
+
+
+
+    public Client(String name, String password, String email){
         this.name = name;
         this.password = password;
-        this.birthDate = birthDate;
         this.email = email;
+        this.purchases = new ArrayList<>();
+        this.address = new HashSet<>();
+    }
+
+    public Client(){}
+
+
+    public long getId() {
+        return this.id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -57,35 +80,37 @@ public class Client {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "User [address=" + address + ", birthDate=" + birthDate + ", book=" + books + ", email=" + email + ", id="
-                + id + ", name=" + name + ", password=" + password + "]";
+    public Set<Address> getAddress() {
+        return this.address;
     }
+
+    public void setAddress(Set<Address> address) {
+        this.address = address;
+    }
+
+    public List<Purchase> getAllPurchases() {
+        return this.purchases;
+    }
+
+    public void setAllPurchases(List<Purchase> allPurchases) {
+        this.purchases = allPurchases;
+    }
+
+
     
-    
-                                                                    
 }

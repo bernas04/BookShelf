@@ -1,38 +1,64 @@
 package com.bookshelf.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Data
+
 @Entity
+@Table(name="Address")
 public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
-    private String road, city, country, zipcode;
+    @Column(name="road")
+    private String road;
+    
+    @Column(name="city")
+    private String city;
 
-    @OneToOne
-    private Store store;
+    @Column(name="country")
+    private String country;
 
-    @OneToOne
-    private Client user;
+    @Column(name="zipcode")
+    private String zipcode;
 
-    public Address(String road, String city, String country, String zipcode) {
+    @ManyToOne
+    @JoinColumn(name = "client_id", nullable=false)
+    private Client client;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "address")
+    private List<Purchase> purchases;
+
+    public Address(String road, String city, String country, String zipcode, Client client) {
         this.road = road;
         this.city = city;
         this.country = country;
         this.zipcode = zipcode;
+        this.client=client;
+        this.purchases=new ArrayList<>();
     }
+
+
+    public Address() {
+    }
+
 
     public String getRoad() {
         return road;
@@ -66,26 +92,19 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    public Store getStore() {
-        return store;
-    }
-
-    public void setStore(Store store) {
-        this.store = store;
-    }
 
     public Client getUser() {
-        return user;
+        return this.client;
     }
 
     public void setUser(Client user) {
-        this.user = user;
+        this.client = user;
     }
 
     @Override
     public String toString() {
-        return "Address [city=" + city + ", country=" + country + ", id=" + id + ", road=" + road + ", store=" + store
-                + ", user=" + user + ", zipcode=" + zipcode + "]";
+        return "Address [city=" + city + ", country=" + country + ", id=" + id + ", road=" + road
+                + ", user=" + client + ", zipcode=" + zipcode + "]";
     }
 
     

@@ -1,34 +1,41 @@
 package com.bookshelf.demo.services;
 
-import com.bookshelf.demo.repository.AddressRepository;
-
 import java.util.List;
-
-import com.bookshelf.demo.model.Address;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.bookshelf.demo.DataTransferObject.AddressGeneric;
+import com.bookshelf.demo.model.Address;
+import com.bookshelf.demo.model.Client;
+import com.bookshelf.demo.repository.AddressRepository;
+import com.bookshelf.demo.repository.ClientRepository;
 
 @Service
 public class AddressService {
     
     @Autowired
-    public AddressRepository addressRepository;
+    private AddressRepository addressRepository;
 
-    public Address saveAddress(Address s){
-        return addressRepository.save(s);
+    @Autowired
+    private ClientRepository clientRepository;
+
+    public Address createAddress(AddressGeneric addressGeneric, long clientId){
+        Client c = clientRepository.findById(clientId).orElseThrow();
+        Address a = new Address(addressGeneric.getRoad(), addressGeneric.getCity(), addressGeneric.getCountry(), addressGeneric.getZipcode(), c);
+
+        return addressRepository.save(a);
     }
 
-    public List<Address> getAddresses(){
-        return addressRepository.findAll();
+    public String deleteAddress(long addressID){
+        Address a = addressRepository.findById(addressID).orElseThrow();
+        if (a!=null)
+            addressRepository.deleteById(addressID);
+            return "Address deleted";
     }
 
-    public Address getAddressId(Long id){
-        return addressRepository.getReferenceById(id);
-    }
-
-    public void deleteById(Long id){
-        addressRepository.deleteById(id);
-
+    public List<Address> getAddressByUser(String email){
+        Client c = clientRepository.findByEmail(email).orElseThrow();
+        return addressRepository.findAllByClient(c);
     }
 }
