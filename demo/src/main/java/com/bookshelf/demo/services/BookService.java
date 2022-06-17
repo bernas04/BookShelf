@@ -1,6 +1,7 @@
 package com.bookshelf.demo.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.bookshelf.demo.model.Book;
 import com.bookshelf.demo.repository.BookRepository;
@@ -25,8 +26,13 @@ public class BookService {
         return bookRepository.getReferenceById(id);
     }
 
-    public void deleteBookById(Long id){
+    public String deleteBookById(Long id){
         bookRepository.deleteById(id);
+        return "Book deleted";
         
+    }
+
+    public Optional<Book> getBookByTitle(String title){
+        return bookRepository.findByTitle(title);
     }
 }

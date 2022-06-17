@@ -38,7 +38,7 @@ public class Client {
 
     
     public Client(){
-
+        
     }
 
     public Client(String name, String password, Date birthDate, String email) {

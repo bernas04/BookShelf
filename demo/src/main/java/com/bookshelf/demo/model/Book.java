@@ -28,13 +28,15 @@ public class Book {
 
     @ManyToOne
     private Store store;
-
-    public Book(String title, String category, String description, Double price, Time return_time) {
+    public Book(){
+        
+    }
+    public Book(String title, String book_image, String category, String description, Double price) {
         this.title = title;
+        this.book_image = book_image;
         this.category = category;
         this.description = description;
         this.price = price;
-        this.return_time = return_time;
     }
 
     public String getTitle() {

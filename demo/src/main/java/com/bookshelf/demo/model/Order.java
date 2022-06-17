@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
+import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -20,6 +20,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name="orders") 
 public class Order {
 
     @Id
