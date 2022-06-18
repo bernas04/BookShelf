@@ -27,12 +27,29 @@ public class Address {
     @OneToOne
     private Client user;
 
+    public Address(){
+        
+    }
     public Address(String road, String city, String country, String zipcode) {
         this.road = road;
         this.city = city;
         this.country = country;
         this.zipcode = zipcode;
     }
+
+    
+
+    public long getId() {
+        return id;
+    }
+
+
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+
 
     public String getRoad() {
         return road;

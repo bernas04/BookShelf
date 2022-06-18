@@ -35,8 +35,22 @@ public class Store {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.latitude = latitude;
+    }
+    public Store(String name, Address address) {
+        this.name = name;
+        this.address = address;
+        this.latitude = 0.0;
+        this.longitude = 0.0;
     }
 
+    
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }

@@ -55,6 +55,12 @@ public class Book {
         this.book_image = book_image;
     }
 
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
     public String getCategory() {
         return category;
     }
