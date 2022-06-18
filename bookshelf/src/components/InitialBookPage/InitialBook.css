@@ -8,8 +8,8 @@
     width: 80%;
     margin-left: 10%;
     margin-top: 5%;
-    
-   
+
+
 }
 .dash2{
   width:100%;
@@ -32,11 +32,12 @@
     border-radius: 10px;
     cursor: pointer;
     background-color: #ffffff;
-    
+
 }
 .dashItem{
     font-size:20px;
 }
+
 
 .bookImage{
     height: 18vmin;
@@ -52,7 +53,7 @@
     font-weight: 600;
     /* margin: 10px 0px; */
     text-align: center;
-   
+
 }
 
 
@@ -60,7 +61,7 @@
 
 .bookAuthor{
     font-size: 20px;
-    
+
     font-weight: 400;
     text-align: center;
     padding-bottom: 10px;
@@ -122,4 +123,34 @@
 .button-32:focus {
   box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
   outline: none;
+}
+.row{
+  padding: 100px;
+}
+
+.grid{
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.box {
+  /* margin: 20px;
+  background-color: #ffffff; */
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  flex: 1;
+  height: 400px;
+  width:100px;
+  margin: 0px 20px;
+  padding: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+.wrapinho{
+  /* background-color: red;
+  margin: 10px;
+  display:flex; */
+  padding-bottom: 40px;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './InitialBook.css';
+import { Card, Row, Col, Container } from "react-bootstrap";
 import book1 from './book1_tqs.jpg';
 import api from "./api";
 import '../SearchBar/./SearchBar.css';
@@ -29,13 +30,19 @@ function InitiaBook() {
             {title === "" ? (
             <>
             <div>
-            <div >
-            <div><img key = {index} src={book1} className="bookImage" alt="logo" /> </div>
-                <div className="bookTitle" key = {index}>{book?.title}</div>
-                <div className="bookPrice" key = {index}>{book?.price} $</div>
-                <div className="buttonT">
-                <button className="button-32" >Add to Basket</button>
-            </div>
+            <div className="wrapinho">
+            <Card style={{ width: "18rem" }} key={index} className="box">
+                <Card.Img key = {index} src={book1} className="bookImage" alt="logo" />
+                <Card.Body>
+                    <Card.Title><div className="bookTitle" key = {index}>{book?.title}</div></Card.Title>
+                    <Card.Text>
+                        <div className="bookPrice" key = {index}>{book?.price} $</div>
+                        <div className="buttonT">
+                            <button className="button-32" >Add to Basket</button>
+                        </div>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
             </div>
             </div>
             </>
@@ -44,12 +51,18 @@ function InitiaBook() {
             {book?.title.slice(0, title.length) === title && (
             <div>
             <div >
-            <div><img key = {index} src={book1} className="bookImage" alt="logo" /> </div>
-                <div className="bookTitle" key = {index}>{book?.title}</div>
-                <div className="bookPrice" key = {index}>{book?.price} $</div>
-                <div className="buttonT">
-                <button className="button-32" key={index} >Add to Basket</button>
-            </div>
+            <Card style={{ width: "18rem" }} key={index} className="box">
+                <Card.Img key = {index} src={book1} className="bookImage" alt="logo" />
+                <Card.Body>
+                    <Card.Title><div className="bookTitle" key = {index}>{book?.title}</div></Card.Title>
+                    <Card.Text>
+                        <div className="bookPrice" key = {index}>{book?.price} $</div>
+                        <div className="buttonT">
+                            <button className="button-32" >Add to Basket</button>
+                        </div>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
             </div>
             </div>
             )}
@@ -80,7 +93,10 @@ function InitiaBook() {
         <br></br>
         
             <div className="row">
-            {books}
+                <div className="grid">
+                    {books}
+           
+                </div> 
             </div>  
             
 

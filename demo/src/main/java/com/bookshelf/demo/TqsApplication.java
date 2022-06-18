@@ -31,12 +31,21 @@ public class TqsApplication {
 			if (bookService.getBooks().size() == 0){
 				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
 				bookService.saveBook(new Book("The 50 shades of Gray", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "Sex", 15.0));
+				bookService.saveBook(new Book("PUTAS", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
 				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
 				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
 				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
 				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
 				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
 				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
+				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
+				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
+				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
+				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
+				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
+				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
+				bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
+				
 			}
 
 
