@@ -22,6 +22,7 @@ public class Book {
     private String title, book_image, category, description;
     private Double price;
     private Time return_time;
+    private String author;
 
     @ManyToOne
     private Client user;
@@ -31,8 +32,9 @@ public class Book {
     public Book(){
         
     }
-    public Book(String title, String book_image, String category, String description, Double price) {
+    public Book(String title, String author, String book_image, String category, String description, Double price) {
         this.title = title;
+        this.author = author;
         this.book_image = book_image;
         this.category = category;
         this.description = description;
