@@ -16,7 +16,7 @@ function Topbar() {
   const navigate = useNavigate();
 
   function handleClick(){
-    navigate("/basket")
+    navigate("/register")
   }
   const [state, setstate] = useState(false);
   const [state2, setstate2] = useState(false);
