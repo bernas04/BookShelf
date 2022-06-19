@@ -21,9 +21,11 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name, password;
+    private String name;
+    
+    private String password;
 
-    private Date birthDate;
+    private String birthDate;
 
     @OneToOne
     private Address address;
@@ -41,7 +43,7 @@ public class Client {
         
     }
 
-    public Client(String name, String password, Date birthDate, String username) {
+    public Client(String name, String password, String birthDate, String username) {
         this.name = name;
         this.password = password;
         this.birthDate = birthDate;
@@ -64,11 +66,11 @@ public class Client {
         this.password = password;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -96,6 +98,10 @@ public class Client {
         this.token=token;
     }
 
+    public String getToken(){
+        return this.token;
+    }
+
 
     @Override
     public String toString() {
@@ -106,6 +112,7 @@ public class Client {
             ", birthDate='" + getBirthDate() + "'" +
             ", address='" + getAddress() + "'" +
             ", orders='" + getOrders() + "'" +
+            ", token='" + getToken() + "'" +
             ", username='" + getUsername() + "'" +
             "}";
     }

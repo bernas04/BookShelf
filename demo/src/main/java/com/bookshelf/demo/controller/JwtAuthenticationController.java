@@ -54,9 +54,8 @@ public class JwtAuthenticationController {
 				.loadUserByUsername(authenticationRequest.getUsername());
 
 		Client p = repository.findByUsername(authenticationRequest.getUsername()).get();
-		
-		final String token = jwtTokenUtil.generateToken(userDetails);
 
+		final String token = jwtTokenUtil.generateToken(userDetails);
 		p.setToken(token);
 		
 		return ResponseEntity.ok(p);
