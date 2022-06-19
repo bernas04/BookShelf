@@ -31,7 +31,7 @@ public class Client {
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
-
+    private String token;
 
     @Column(unique = true)
     private String username;
@@ -90,6 +90,10 @@ public class Client {
 
     public List<Order> getOrders(){
         return this.orders;
+    }
+
+    public void setToken(String token){
+        this.token=token;
     }
 
 
