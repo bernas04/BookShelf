@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -21,16 +23,18 @@ public class Book {
 
     private String title, book_image, category, description;
     private Double price;
-    private Time return_time;
     private String author;
 
-    @ManyToOne
-    private Client user;
 
     @ManyToOne
+    @JoinColumn(name = "store_id")
     private Store store;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order orders;
+
     public Book(){
-        
     }
     public Book(String title, String author, String book_image, String category, String description, Double price) {
         this.title = title;
@@ -38,6 +42,12 @@ public class Book {
         this.book_image = book_image;
         this.category = category;
         this.description = description;
+        this.price = price;
+    }
+
+    public Book(String title, String author, Double price) {
+        this.title = title;
+        this.author = author;
         this.price = price;
     }
 
@@ -87,21 +97,7 @@ public class Book {
         this.price = price;
     }
 
-    public Time getReturn_time() {
-        return return_time;
-    }
 
-    public void setReturn_time(Time return_time) {
-        this.return_time = return_time;
-    }
-
-    public Client getUser() {
-        return user;
-    }
-
-    public void setUser(Client user) {
-        this.user = user;
-    }
 
     public Store getStore() {
         return store;
@@ -111,12 +107,6 @@ public class Book {
         this.store = store;
     }
 
-    @Override
-    public String toString() {
-        return "Book [book_image=" + book_image + ", category=" + category + ", description=" + description + ", id="
-                + id + ", price=" + price + ", return_time=" + return_time + ", store=" + store + ", title=" + title
-                + ", user=" + user + "]";
-    }
 
     
 }

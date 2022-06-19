@@ -21,31 +21,33 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name, password;
+    private String name;
+    
+    private String password;
 
-    private Date birthDate;
+    private String birthDate;
 
     @OneToOne
     private Address address;
 
-    @OneToMany
-    private List<Book> books;
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
-
+    private String token;
 
     @Column(unique = true)
-    private String email;
+    private String username;
 
     
     public Client(){
         
     }
 
-    public Client(String name, String password, Date birthDate, String email) {
+    public Client(String name, String password, String birthDate, String username) {
         this.name = name;
         this.password = password;
         this.birthDate = birthDate;
-        this.email = email;
+        this.username = username;
     }
 
     public String getName() {
@@ -64,28 +66,55 @@ public class Client {
         this.password = password;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
+
+    public long getId(){
+        return this.id;
+    }
+
+    public Address getAddress(){
+        return this.address;
+    }
+
+    public List<Order> getOrders(){
+        return this.orders;
+    }
+
+    public void setToken(String token){
+        this.token=token;
+    }
+
+    public String getToken(){
+        return this.token;
+    }
+
 
     @Override
     public String toString() {
-        return "User [address=" + address + ", birthDate=" + birthDate + ", book=" + books + ", email=" + email + ", id="
-                + id + ", name=" + name + ", password=" + password + "]";
+        return "{" +
+            " id='" + getId() + "'" +
+            ", name='" + getName() + "'" +
+            ", password='" + getPassword() + "'" +
+            ", birthDate='" + getBirthDate() + "'" +
+            ", address='" + getAddress() + "'" +
+            ", orders='" + getOrders() + "'" +
+            ", token='" + getToken() + "'" +
+            ", username='" + getUsername() + "'" +
+            "}";
     }
-    
-    
-                                                                    
+                                                                
 }
