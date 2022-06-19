@@ -23,7 +23,7 @@ public class Store {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "store")
     private List<Book> books;
 
     @OneToOne
