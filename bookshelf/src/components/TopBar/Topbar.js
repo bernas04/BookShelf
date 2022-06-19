@@ -33,6 +33,10 @@ function Topbar() {
   const hideDropdown2=()=>{
     setstate2(false);
   }
+  const logOut=()=>{
+    localStorage.clear();
+    navigate("/")
+  }
 
   return (
     <div className="topbar">
@@ -68,7 +72,7 @@ function Topbar() {
               {state2?(<ul className="dropdown-list2" onMouseEnter={showDropdown2}>
                 <button className="items" onClick={handleClick}><BsCartFill style={{right: '10px',}}/>Check Card</button>
                 <ul className="items"><BsPersonFill />Perfil</ul>
-                <ul className="items"><BsFillDoorOpenFill  />Sign Out</ul>
+                <ul className="items" onClick={logOut}><BsFillDoorOpenFill  />Sign Out</ul>
 
               </ul>):
               null}

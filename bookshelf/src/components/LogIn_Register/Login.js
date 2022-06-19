@@ -15,8 +15,9 @@ export default function Login() {
   }
 
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
+  const [isSubmited, setIsSubmitted] = useState("");
+
 
   function validateForm() {
 
@@ -27,6 +28,26 @@ export default function Login() {
   function handleSubmit(event) {
 
     event.preventDefault();
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json',  'Access-Control-Allow-Origin': '*'},
+      body: JSON.stringify({username: email, password: password})
+    };
+
+    
+    
+    fetch(`http://localhost:8080/api/auth/authenticate`, requestOptions)
+    .then(response => response.json())
+    .then(data => { 
+        if (data.error){
+          setIsSubmitted(false);
+        }
+        if (data.token){
+            localStorage.setItem("info", JSON.stringify(data));
+            setIsSubmitted(true);
+            navigate("/inicialDash")
+        }
+    });
 
   }
 
@@ -47,12 +68,12 @@ export default function Login() {
 
                 autoFocus
 
-                type="email"
+                type="name"
 
                 value={email}
 
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="User Name"
+                placeholder="Username"
 
             />
 
@@ -74,6 +95,12 @@ export default function Login() {
             />
 
             </Form.Group>
+            {
+                isSubmited===false ?
+                <div className="signintext">Login Error</div>
+                :
+                <></>
+              }
 
             <Button  className="button-4" block size="lg" type="submit" disabled={!validateForm()}>
 
@@ -82,11 +109,10 @@ export default function Login() {
             </Button>
 
             </Form>
-            <div className="signintext" onClick={handleClick}>Register Now</div>
-
+              <Button className="button-3" onClick={handleClick} block variant="secondary">Register Now</Button>
+              
         </div>
 
-     
 
     </div>
 

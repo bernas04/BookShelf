@@ -64,7 +64,8 @@ public class JwtAuthenticationController {
 
 	@RequestMapping(value = "/registerClient", method = RequestMethod.POST)
 	public ResponseEntity<?> saveManager(@RequestBody Client m) throws Exception {
-		return ResponseEntity.ok(clientService.saveClient(m));
+		Client c =clientService.saveClient(m);
+		return ResponseEntity.ok(c);
 	}
 
 	private void authenticate(String username, String password) throws Exception {
