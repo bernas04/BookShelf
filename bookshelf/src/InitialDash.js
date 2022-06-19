@@ -6,7 +6,6 @@ function InitialDash() {
   return (
     <div className="Dash">
       <Topbar />
-      <SearchBar />
       <InitialBook />
      
     </div>
