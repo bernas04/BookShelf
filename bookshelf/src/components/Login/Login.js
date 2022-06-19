@@ -11,6 +11,7 @@ function Login() {
   console.log("Password", password);
   React.useEffect(() => {
     api.get('clients/Clients').then(res => {
+    console.log("OIOIOIIOIOIIOIOIOIIOO", res);
     setData(res.data);
 });
 },[]);

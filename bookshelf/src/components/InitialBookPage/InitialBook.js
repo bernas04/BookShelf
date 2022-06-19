@@ -17,7 +17,7 @@ function InitiaBook() {
             setData(res.data);
             console.log("res", res);
         });
-    },[data_stats]);
+    },[]);
     console.log(title);
 
 
@@ -82,9 +82,7 @@ function InitiaBook() {
 
                 <div ><input value={title} className="searchInput" type="title" id="title" onChange={event => setTitle(event.target.value)} /></div>
                 <div className="lupinha">
-                    <button type="submit" className="btn btn-primary" >
                     <BsSearch />
-                    </button>
                 </div>
             </div>
             

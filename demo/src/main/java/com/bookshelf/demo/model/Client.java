@@ -38,6 +38,8 @@ public class Client {
     @Column(unique = true)
     private String username;
 
+    @OneToOne
+    private Cart cart;
     
     public Client(){
         
