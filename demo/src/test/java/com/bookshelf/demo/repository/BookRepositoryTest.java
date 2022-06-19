@@ -46,7 +46,7 @@ public class BookRepositoryTest {
 
     @Test
     public void getBookInfo(){
-        Book book1 = new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy is raised by a bear in the jungle", 12.0);
+        Book book1 = new Book("The Book of the jungle", "Author1", 12.0);
         entityManager.persistAndFlush(book1);
 
         List<Book> allManagers = bookRepository.findAll();
@@ -55,7 +55,7 @@ public class BookRepositoryTest {
 
     @Test
     public void findByInvalidId(){
-        Book book1 = new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy is raised by a bear in the jungle", 12.0);
+        Book book1 = new Book("The Book of the jungle", "Author2", 12.0);
         entityManager.persistAndFlush(book1);
         Optional<Book> repoManager = bookRepository.findById(book1.getId()*200L);
         assertThat(repoManager).isEmpty().isNotPresent();

@@ -32,7 +32,7 @@ public class ClientService {
         return "Client deleted!";
     }
 
-    public Optional<Client> getBookByEmail(String email){
-        return clientRepository.findByEmail(email);
+    public Optional<Client> getBookByEmail(String username){
+        return clientRepository.findByUsername(username);
     }
 }

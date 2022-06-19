@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.bookshelf.demo.model.Book;
+import com.bookshelf.demo.model.Category;
 import com.bookshelf.demo.repository.BookRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,18 @@ public class BookService {
         bookRepository.deleteById(id);
         return "Book deleted";
         
+    }
+
+    public List<Book> getFantasyBooks(){
+        return bookRepository.findByCategory(Category.Fantasy.toString());
+    }
+
+    public List<Book> getHorrorBooks(){
+        return bookRepository.findByCategory(Category.Horror.toString());
+    }
+
+    public List<Book> getSciFiBooks(){
+        return bookRepository.findByCategory(Category.Science_Fiction.toString());
     }
 
     public Optional<Book> getBookByTitle(String title){

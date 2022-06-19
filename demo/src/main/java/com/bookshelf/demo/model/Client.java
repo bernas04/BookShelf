@@ -28,24 +28,24 @@ public class Client {
     @OneToOne
     private Address address;
 
-    @OneToMany
-    private List<Book> books;
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
 
 
     @Column(unique = true)
-    private String email;
+    private String username;
 
     
     public Client(){
         
     }
 
-    public Client(String name, String password, Date birthDate, String email) {
+    public Client(String name, String password, Date birthDate, String username) {
         this.name = name;
         this.password = password;
         this.birthDate = birthDate;
-        this.email = email;
+        this.username = username;
     }
 
     public String getName() {
@@ -72,20 +72,38 @@ public class Client {
         this.birthDate = birthDate;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
+
+    public long getId(){
+        return this.id;
+    }
+
+    public Address getAddress(){
+        return this.address;
+    }
+
+    public List<Order> getOrders(){
+        return this.orders;
+    }
+
 
     @Override
     public String toString() {
-        return "User [address=" + address + ", birthDate=" + birthDate + ", book=" + books + ", email=" + email + ", id="
-                + id + ", name=" + name + ", password=" + password + "]";
+        return "{" +
+            " id='" + getId() + "'" +
+            ", name='" + getName() + "'" +
+            ", password='" + getPassword() + "'" +
+            ", birthDate='" + getBirthDate() + "'" +
+            ", address='" + getAddress() + "'" +
+            ", orders='" + getOrders() + "'" +
+            ", username='" + getUsername() + "'" +
+            "}";
     }
-    
-    
-                                                                    
+                                                                
 }

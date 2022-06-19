@@ -9,6 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -31,9 +33,10 @@ public class Order {
     private Date date;
 
     @ManyToOne
+    @JoinColumn(name = "client_id")
     private Client user;  
 
-    @OneToMany
+    @OneToMany(mappedBy = "orders")
     private List<Book> books;
 
     @OneToOne

@@ -39,6 +39,22 @@ public class BookController {
         return bookService.getBookById(id);
     }
 
+    @GetMapping("/fantasyBooks")
+    public List<Book> getFantasyBooks(){
+        return bookService.getFantasyBooks();
+    }
+
+    @GetMapping("/horrorBooks")
+    public List<Book> getHorrorBooks(){
+        return bookService.getHorrorBooks();
+    }
+
+    @GetMapping("/scifi")
+    public List<Book> getSciFi(){
+        return bookService.getSciFiBooks();
+    }
+
+
     @DeleteMapping("/deleteBook")
     public String deleteRider(@RequestParam (value = "id") Long id){
         return bookService.deleteBookById(id);
