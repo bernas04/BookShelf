@@ -6,10 +6,14 @@ import Login from './components/LogIn_Register/Login';
 import Register from'./components/LogIn_Register/Register';
 import ProtectedRoutes from './components/Configuration/ProtectedRoutes';
 
+import Login from './components/Login/Login';
+
+
 
 function App() {
 
   return (
+
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -18,6 +22,7 @@ function App() {
         <Route path="/basket" element={<Cart />} />
       </Route>
     </Routes>
+
     
   );
 }

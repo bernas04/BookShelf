@@ -16,9 +16,11 @@ function Cart()  {
         alert('Checkout!');
     }
 
+
     books.forEach((book, index) => {
         books2.push(
         <div className="cart-item">
+
                             <div className= "first">
                             <div><img src={book1} className="bookImage" alt="logo" /> </div>
 

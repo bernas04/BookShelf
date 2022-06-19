@@ -1073,6 +1073,11 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
+"@coreui/react@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@coreui/react/-/react-4.2.2.tgz#3e042c17ba3eafbfbd5d9b26ffb385be3991d250"
+  integrity sha512-9omQh1nei5UOoKsCvJYztwCuOpkCquQ4dAE5lSt/3TE6ZQea1D3CmecI5T9DOlTdY28JsOzFs/PBzEdkCt0J5A==
+
 "@csstools/normalize.css@*":
   "integrity" "sha512-M0qqxAcwCsIVfpFQSlGN5XjXWu8l5JDZN+fPt1LeW5SZexQTgnaEvgXAY+CeygRw0EeppWHi12JxESWiWrB0Sg=="
   "resolved" "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-12.0.0.tgz"
