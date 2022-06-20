@@ -8,26 +8,22 @@ import { BsSearch } from 'react-icons/bs';
 
 
 
-function InitiaBook() {
+function InitiaBook({category}) {
 
     const  [data_stats, setData] = useState([]);
     const books = []
     
     const [title, setTitle] = useState("");
 
-    const [categories, setCategories] = useState(["Fantasy","Horror","Science_Fiction"]);
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const category = urlParams.get('category')
-    console.log(category);
+    //const [categories, setCategories] = useState(["Fantasy","Horror","Science_Fiction"]);
 
 
     useEffect(() => {
+        console.log("Category changed:", category)
         api.get('books/Books/').then(res => {
             setData(res.data);
         });
-    },[]);
+    },[category]);
 
 
     

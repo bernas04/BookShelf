@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './Topbar.css';
-import {  useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 import  {BsPersonFill, BsCartFill, BsFillDoorOpenFill} from "react-icons/bs";
 
 
 
-function Topbar() {
+function Topbar({categorySetter}) {
 
 
   const navigate = useNavigate();
@@ -38,8 +38,6 @@ function Topbar() {
     navigate("/")
   }
 
-  
-
 
 
   return (
@@ -54,9 +52,9 @@ function Topbar() {
               
               <div className="components">Search by Category</div>
               {state?(<ul className="dropdown-list" onMouseEnter={showDropdown}>
-                <ul className="items" >Fantasy</ul>
-                <ul className="items" >Horror</ul>
-                <ul className="items" >Science_Fiction</ul>
+                <ul className="items" onClick={()=>categorySetter("fantasy")} >Fantasy</ul>
+                <ul className="items" onClick={()=>categorySetter("horror")} >Horror</ul>
+                <ul className="items" onClick={()=>categorySetter("scifi")} >Science Fiction</ul>
               </ul>):
               null}
               
