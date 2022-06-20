@@ -7,21 +7,38 @@ import '../SearchBar/./SearchBar.css';
 import { BsSearch } from 'react-icons/bs';
 
 
+const TEST_DATA = [
+    {
+        title: "book 1",
+        price: 20,
+    },
+    {
+        title: "book 2",
+        price: 15,
+    },
+    {
+        title: "book 3",
+        price: 10,
+    }
+]
+
+
 function InitiaBook() {
 
     
 
-    const  [data_stats, setData] = React.useState([]);
+    //const  [data_stats, setData] = React.useState([]);
+    const  [data_stats, setData] = React.useState(TEST_DATA);
     const books = []
-    const user_id = JSON.parse(localStorage.getItem("user")).id;
+    //const user_id = JSON.parse(localStorage.getItem("user")).id;
     var book_id = 0;
     const [title, setTitle] = React.useState("");
-    React.useEffect(() => {
-            api.get('books/Books/').then(res => {
-            setData(res.data);
-            console.log("res", res);
-        });
-    },[]);
+    //React.useEffect(() => {
+    //        api.get('books/Books/').then(res => {
+    //        setData(res.data);
+    //        console.log("res", res);
+    //    });
+    //},[]);
     console.log(title);
 
     // api.post(`/cart/addCart/${user_id}/${book_id}`).then(res => {
@@ -32,6 +49,7 @@ function InitiaBook() {
     
     function handleClick(index){
         book_id = index;
+        console.log("handle click,", index)
     }
     data_stats.forEach((book, index) => {
         books.push(
@@ -47,7 +65,7 @@ function InitiaBook() {
                     <Card.Text>
                         <div className="bookPrice" key = {index}>{book?.price} $</div>
                         <div className="buttonT">
-                            <button className="button-32" onSubmit={handleClick.apply.bind(this, index)}>Add to Basket</button>
+                            <button className="button-32" onClick={()=>handleClick(index)}>Add to Basket</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
@@ -68,7 +86,7 @@ function InitiaBook() {
                     <Card.Text>
                         <div className="bookPrice" key = {index}>{book?.price} $</div>
                         <div className="buttonT">
-                            <button className="button-32" >Add to Basket</button>
+                            <button type='button' className="button-32" >Add to Basket</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
@@ -82,7 +100,7 @@ function InitiaBook() {
         )
     })
     
-    console.log("User_Id", user_id);
+    //console.log("User_Id", user_id);
     console.log("Book_Id", book_id);
 
     return (
