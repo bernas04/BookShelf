@@ -31,7 +31,7 @@ public class Client {
 
     private String birthDate;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 
     @OneToMany(mappedBy = "user")
@@ -52,12 +52,13 @@ public class Client {
         
     }
 
-    public Client(String name, String password, String birthDate, String username) {
+    public Client(String name, String password, String birthDate, String username, Address address) {
         this.name = name;
         this.password = password;
         this.birthDate = birthDate;
         this.username = username;
         this.cart = new Cart(this);
+        this.address=address;
     }
 
     public String getName() {

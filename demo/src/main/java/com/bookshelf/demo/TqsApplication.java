@@ -8,9 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.bookshelf.demo.model.Address;
 import com.bookshelf.demo.model.Book;
 import com.bookshelf.demo.model.Client;
 import com.bookshelf.demo.repository.BookRepository;
+import com.bookshelf.demo.services.AddressService;
 import com.bookshelf.demo.services.BookService;
 import com.bookshelf.demo.services.ClientService;
 
@@ -28,7 +30,7 @@ public class TqsApplication {
 	
 	@Transactional
 	@Bean
-	public CommandLineRunner demo(BookService bookService, ClientService clientService){
+	public CommandLineRunner demo(BookService bookService, ClientService clientService, AddressService addressService){
 		return(args) -> {
 			if (bookService.getBooks().size() == 0){
 				bookService.saveBook(new Book("Cruel Crown","Victoria Aveyard" , 12.0));
@@ -48,7 +50,9 @@ public class TqsApplication {
 				// bookService.saveBook(new Book("The Book of the jungle", "https://www.imdb.com/title/tt3040964/", "Science Fiction", "A boy died of alchool poisoning", 12.0));
 			}
 			if (clientService.getClients().size()==0){
-				clientService.saveClient(new Client("Maria", "admin", "17-05-1996", "mary"));
+				Address tmp = new Address("Rua da Pega", "Aveiro", "PT", "3800");
+				addressService.saveAddress(tmp);
+				clientService.saveClient(new Client("Maria", "admin", "17-05-1996", "mary", tmp));
 			}
 
 

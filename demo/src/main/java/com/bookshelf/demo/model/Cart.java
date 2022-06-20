@@ -34,8 +34,7 @@ public class Cart {
     private Client client;  
     
     @JoinColumn(name = "cart")
-    @OneToMany(fetch =
-    FetchType.LAZY)
+    @OneToMany(fetch =FetchType.LAZY)
     private List<CartProduct> cartProducts;
 
    

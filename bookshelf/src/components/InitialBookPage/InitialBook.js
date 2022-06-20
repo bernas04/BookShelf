@@ -30,7 +30,7 @@ function InitiaBook() {
     //const  [data_stats, setData] = React.useState([]);
     const  [data_stats, setData] = React.useState([]);
     const books = []
-    const user_id = JSON.parse(localStorage.getItem("user")).id;
+    const user_id = JSON.parse(localStorage.getItem("info")).id;
     const [title, setTitle] = React.useState("");
     React.useEffect(() => {
            api.get('books/Books/').then(res => {

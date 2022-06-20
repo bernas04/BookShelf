@@ -10,7 +10,7 @@ function Cart()  {
     localStorage.setItem("orders",  JSON.stringify(books))
     const books2 = []
     const  [data_stats, setData] = React.useState([]);
-    const user_id = JSON.parse(localStorage.getItem("user")).id;
+    const user_id = JSON.parse(localStorage.getItem("info")).id;
 
     React.useEffect(() => {
         api.get(`cartProducts/books/${user_id}/`).then(res => {

@@ -1,5 +1,6 @@
 package com.bookshelf.demo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +25,7 @@ public class Address {
     @OneToOne
     private Store store;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Client user;
 
     public Address(){
