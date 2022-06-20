@@ -1,31 +1,25 @@
 import React, {useState} from 'react';
 import './Topbar.css';
-import { useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import  {BsPersonFill, BsCartFill, BsFillDoorOpenFill} from "react-icons/bs";
 
 
-const handleLogout = () => {
-  localStorage.removeItem('token');
-  window.location.href = '/';
-};
-
- 
 
 function Topbar() {
+
 
   const navigate = useNavigate();
 
   function handleClick(){
     navigate("/register")
   }
-  function handleClick2(){
-    navigate("/profile")
-  }
+ 
   function handleClick3(){
-    navigate("/")
+    navigate("/inicialDash")
   }
   const [state, setstate] = useState(false);
   const [state2, setstate2] = useState(false);
+
 
   const showDropdown=()=>{
     setstate(true);
@@ -44,6 +38,10 @@ function Topbar() {
     navigate("/")
   }
 
+  
+
+
+
   return (
     <div className="topbar">
       <div className="topbarWrapper">
@@ -56,11 +54,9 @@ function Topbar() {
               
               <div className="components">Search by Category</div>
               {state?(<ul className="dropdown-list" onMouseEnter={showDropdown}>
-                <ul className="items">Drama</ul>
-                <ul className="items">Romance</ul>
-                <ul className="items">Fiction</ul>
-                <ul className="items">Manga</ul>
-
+                <ul className="items" >Fantasy</ul>
+                <ul className="items" >Horror</ul>
+                <ul className="items" >Science_Fiction</ul>
               </ul>):
               null}
               

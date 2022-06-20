@@ -6,7 +6,9 @@ function InitialDash() {
   return (
     <div className="Dash">
       <Topbar />
-      <InitialBook />
+      <InitialBook
+
+      />
      
     </div>
   );

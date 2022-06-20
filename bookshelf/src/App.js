@@ -6,7 +6,6 @@ import Login from './components/LogIn_Register/Login';
 import Register from'./components/LogIn_Register/Register';
 import ProtectedRoutes from './components/Configuration/ProtectedRoutes';
 
-import Login from './components/Login/Login';
 
 
 
