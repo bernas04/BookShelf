@@ -1,5 +1,6 @@
 package com.bookshelf.demo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,10 @@ public class CartService {
     @Autowired
     public BookRepository bookRepository;
 
+    public List<Cart> getCarts(){
+        return cartRepository.findAll();
+    }
+
     public Cart saveCart(Cart cart){
         return cartRepository.save(cart);
     }
@@ -43,6 +48,7 @@ public class CartService {
     public CartProduct addCart(Long client_id, Long book_id){
         Optional<Client> client = clientRepository.findById(client_id);
         Cart cart = cartRepository.findByClient(client);
+        System.out.println(cart);
         for(CartProduct cartProduct: cart.getCartProducts()){
             if(cartProduct.getBook().getId() == book_id){
                 cartProduct.setQuantity(cartProduct.getQuantity() + 1);
@@ -51,6 +57,10 @@ public class CartService {
         }
         return cartProductRepository.save(new CartProduct(cart, bookRepository.findById(book_id).get(), 1));
         
+    }
+
+    public List<CartProduct> getProducts(Long client_id){
+        return cartRepository.findByClient(clientRepository.findById(client_id)).getCartProducts();
     }
     
 }

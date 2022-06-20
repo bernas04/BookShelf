@@ -16,6 +16,8 @@ function Login() {
 });
 },[]);
 
+console.log(data_stats);
+
 let navigate = useNavigate(); 
 const routeChange = () =>{ 
   localStorage.setItem("user", JSON.stringify(data_stats[0]));

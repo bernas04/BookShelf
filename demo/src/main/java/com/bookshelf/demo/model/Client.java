@@ -3,14 +3,18 @@ package com.bookshelf.demo.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -38,7 +42,10 @@ public class Client {
     @Column(unique = true)
     private String username;
 
-    @OneToOne
+
+    @OneToOne(mappedBy = "client", cascade = CascadeType.ALL, fetch =
+    FetchType.LAZY)
+    @JsonIgnore
     private Cart cart;
     
     public Client(){

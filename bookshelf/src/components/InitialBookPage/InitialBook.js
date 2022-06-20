@@ -28,22 +28,20 @@ function InitiaBook() {
     
 
     //const  [data_stats, setData] = React.useState([]);
-    const  [data_stats, setData] = React.useState(TEST_DATA);
+    const  [data_stats, setData] = React.useState([]);
     const books = []
-    //const user_id = JSON.parse(localStorage.getItem("user")).id;
+    const user_id = JSON.parse(localStorage.getItem("user")).id;
     var book_id = 0;
     const [title, setTitle] = React.useState("");
-    //React.useEffect(() => {
-    //        api.get('books/Books/').then(res => {
-    //        setData(res.data);
-    //        console.log("res", res);
-    //    });
-    //},[]);
+    React.useEffect(() => {
+           api.get('books/Books/').then(res => {
+           setData(res.data);
+           console.log("res", res);
+       });
+    },[]);
     console.log(title);
 
-    // api.post(`/cart/addCart/${user_id}/${book_id}`).then(res => {
-    //     console.log("request made to api")
-    //   });
+    api.post(`/cart/addCart/${1}/${1}`)
 
     console.log(data_stats);
     
@@ -86,7 +84,7 @@ function InitiaBook() {
                     <Card.Text>
                         <div className="bookPrice" key = {index}>{book?.price} $</div>
                         <div className="buttonT">
-                            <button type='button' className="button-32" >Add to Basket</button>
+                            <button type='button' className="button-32" onClick={()=>handleClick(index)}>Add to Basket</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
@@ -100,7 +98,7 @@ function InitiaBook() {
         )
     })
     
-    //console.log("User_Id", user_id);
+    console.log("User_Id", user_id);
     console.log("Book_Id", book_id);
 
     return (
