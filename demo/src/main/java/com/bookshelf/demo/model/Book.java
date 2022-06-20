@@ -25,6 +25,8 @@ public class Book {
     private Double price;
     private String author;
 
+    @OneToOne
+    private CartProduct cartProduct;
 
     @ManyToOne
     @JoinColumn(name = "store_id")

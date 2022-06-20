@@ -8,9 +8,13 @@ import { BsSearch } from 'react-icons/bs';
 
 
 function InitiaBook() {
+
+    
+
     const  [data_stats, setData] = React.useState([]);
     const books = []
-    
+    const user_id = JSON.parse(localStorage.getItem("user")).id;
+    var book_id = 0;
     const [title, setTitle] = React.useState("");
     React.useEffect(() => {
             api.get('books/Books/').then(res => {
@@ -20,11 +24,16 @@ function InitiaBook() {
     },[]);
     console.log(title);
 
+    // api.post(`/cart/addCart/${user_id}/${book_id}`).then(res => {
+    //     console.log("request made to api")
+    //   });
 
     console.log(data_stats);
     
+    function handleClick(index){
+        book_id = index;
+    }
     data_stats.forEach((book, index) => {
-        
         books.push(
             <>
             {title === "" ? (
@@ -38,7 +47,7 @@ function InitiaBook() {
                     <Card.Text>
                         <div className="bookPrice" key = {index}>{book?.price} $</div>
                         <div className="buttonT">
-                            <button className="button-32" >Add to Basket</button>
+                            <button className="button-32" onSubmit={handleClick.apply.bind(this, index)}>Add to Basket</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
@@ -72,8 +81,9 @@ function InitiaBook() {
             </>
         )
     })
-  
-       
+    
+    console.log("User_Id", user_id);
+    console.log("Book_Id", book_id);
 
     return (
         <>
@@ -94,7 +104,6 @@ function InitiaBook() {
             <div className="row">
                 <div className="grid">
                     {books}
-           
                 </div> 
             </div>  
             

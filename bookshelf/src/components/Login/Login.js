@@ -18,6 +18,7 @@ function Login() {
 
 let navigate = useNavigate(); 
 const routeChange = () =>{ 
+  localStorage.setItem("user", JSON.stringify(data_stats[0]));
   let path = '/index'; 
   navigate(path);
 }
@@ -37,7 +38,7 @@ const routeChange = () =>{
       </div>
       
       {username === data_stats[0]?.name && password === data_stats[0]?.password ?(
-
+      
       <>
       <div >
         <button onClick={routeChange}>Login</button>
@@ -49,7 +50,7 @@ const routeChange = () =>{
       </div>
       )}
     </form>
-
   )
+
 }
 export default Login;

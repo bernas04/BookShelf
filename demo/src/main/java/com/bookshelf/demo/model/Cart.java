@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -26,33 +25,43 @@ public class Cart {
 
 
 
-    @CreationTimestamp
-    private Date date;
+    
 
     @OneToOne
-    private Client user;  
+    private Client client;  
 
     @OneToMany
-    private List<Book> books;
-
-    @OneToOne
-    private Address address;
+    private List<CartProduct> cartProducts;
 
    
 
-    private int riderReview;
 
-    private String rider;
 
     public Cart(){
 
     }
 
-    public Cart(Date date, Client user, List<Book> books, Address address) {
-        this.date = date;
-        this.user = user;
-        this.books = books;
-        this.address = address;
+    public Cart(Client client){
+        this.client = client;
+    }
+
+    
+
+    
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public List<CartProduct> getCartProducts() {
+        return cartProducts;
+    }
+
+    public void setCartProducts(List<CartProduct> cartProducts) {
+        this.cartProducts = cartProducts;
     }
 
     public long getId() {
@@ -63,53 +72,16 @@ public class Cart {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
     public Client getUser() {
-        return user;
+        return client;
     }
 
     public void setUser(Client user) {
-        this.user = user;
+        this.client = user;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public int getRiderReview() {
-        return riderReview;
-    }
-
-    public void setRiderReview(int riderReview) {
-        this.riderReview = riderReview;
-    }
-
-    public String getRider() {
-        return rider;
-    }
-
-    public void setRider(String rider) {
-        this.rider = rider;
-    }
+    
 
     
 }

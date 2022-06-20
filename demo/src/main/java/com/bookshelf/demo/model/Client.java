@@ -50,6 +50,7 @@ public class Client {
         this.password = password;
         this.birthDate = birthDate;
         this.username = username;
+        this.cart = new Cart(this);
     }
 
     public String getName() {
