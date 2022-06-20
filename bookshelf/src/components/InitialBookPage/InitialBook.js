@@ -7,28 +7,46 @@ import '../SearchBar/./SearchBar.css';
 import { BsSearch } from 'react-icons/bs';
 
 
+const TEST_DATA = [
+    {
+        title: "book 1",
+        price: 20,
+    },
+    {
+        title: "book 2",
+        price: 15,
+    },
+    {
+        title: "book 3",
+        price: 10,
+    }
+]
 
-function InitiaBook({category}) {
 
-    const  [data_stats, setData] = useState([]);
+function InitiaBook() {
+
+    
+
+    //const  [data_stats, setData] = React.useState([]);
+    const  [data_stats, setData] = React.useState([]);
     const books = []
-    
-    const [title, setTitle] = useState("");
-
-    //const [categories, setCategories] = useState(["Fantasy","Horror","Science_Fiction"]);
-
-
-    useEffect(() => {
-        console.log("Category changed:", category)
-        api.get('books/Books/').then(res => {
-            setData(res.data);
-        });
-    },[category]);
+    const user_id = JSON.parse(localStorage.getItem("user")).id;
+    const [title, setTitle] = React.useState("");
+    React.useEffect(() => {
+           api.get('books/Books/').then(res => {
+           setData(res.data);
+           console.log("res", res);
+       });
+    },[]);
+    console.log(title);
 
 
     
+    function handleClick(index){
+        api.post(`/cart/addCart/${user_id}/${index + 1}`)
+        console.log("handle click,", index)
+    }
     data_stats.forEach((book, index) => {
-        
         books.push(
             <>
             {title === "" ? 
@@ -43,7 +61,7 @@ function InitiaBook({category}) {
                     <Card.Text>
                         <div className="bookPrice" key = {index}>{book?.price} $</div>
                         <div className="buttonT">
-                            <button className="button-32" >Add to Basket</button>
+                            <button className="button-32" onClick={()=>handleClick(index)}>Add to Basket</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
@@ -65,7 +83,7 @@ function InitiaBook({category}) {
                     <Card.Text>
                         <div className="bookPrice" key = {index}>{book?.price} $</div>
                         <div className="buttonT">
-                            <button className="button-32" >Add to Basket</button>
+                            <button type='button' className="button-32" onClick={()=>handleClick(index)}>Add to Basket</button>
                         </div>
                     </Card.Text>
                 </Card.Body>
@@ -78,8 +96,8 @@ function InitiaBook({category}) {
             </>
         )
     })
-  
-       
+    
+    console.log("User_Id", user_id);
 
     return (
         <>
@@ -89,9 +107,7 @@ function InitiaBook({category}) {
 
                 <div ><input value={title} className="searchInput" type="title" id="title" onChange={event => setTitle(event.target.value)} /></div>
                 <div className="lupinha">
-                    <button type="submit" className="btn btn-primary" >
                     <BsSearch />
-                    </button>
                 </div>
             </div>
             

@@ -46,9 +46,9 @@ public class Order {
     @Enumerated
     private OrderStatus status;
 
-    private int riderReview;
+    // private int riderReview;
 
-    private String rider;
+    // private String rider;
 
     public Order(Client user, Address address, List<Book> books) {
         this.user = user;
@@ -108,21 +108,21 @@ public class Order {
         this.status = status;
     }
 
-    public int getRiderReview() {
-        return this.riderReview;
-    }
+    // public int getRiderReview() {
+    //     return this.riderReview;
+    // }
 
-    public void setRiderReview(int riderReview) {
-        this.riderReview = riderReview;
-    }
+    // public void setRiderReview(int riderReview) {
+    //     this.riderReview = riderReview;
+    // }
 
-    public String getRider() {
-        return this.rider;
-    }
+    // public String getRider() {
+    //     return this.rider;
+    // }
 
-    public void setRider(String rider) {
-        this.rider = rider;
-    }
+    // public void setRider(String rider) {
+    //     this.rider = rider;
+    // }
 
 
     @Override
@@ -134,8 +134,6 @@ public class Order {
             ", books='" + getBooks() + "'" +
             ", address='" + getAddress() + "'" +
             ", status='" + getStatus() + "'" +
-            ", riderReview='" + getRiderReview() + "'" +
-            ", rider='" + getRider() + "'" +
             "}";
     }
 

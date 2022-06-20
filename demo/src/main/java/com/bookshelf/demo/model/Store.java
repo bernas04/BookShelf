@@ -35,7 +35,6 @@ public class Store {
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.latitude = latitude;
     }
     public Store(String name, Address address) {
         this.name = name;
@@ -45,6 +44,13 @@ public class Store {
     }
 
     
+    
+    public Store(String name, Address address, Double latitude, Double longitude) {
+        this.name = name;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
     public long getId() {
         return id;
     }
