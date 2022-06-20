@@ -1,5 +1,6 @@
 package com.bookshelf.demo.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,5 +48,13 @@ public class BookService {
 
     public Optional<Book> getBookByTitle(String title){
         return bookRepository.findByTitle(title);
+    }
+
+    public List<Category> getAllCategories() {
+        List<Category> allCategories = new ArrayList<>();
+        for (Category c: Category.values())
+            allCategories.add(c);
+        
+        return allCategories;
     }
 }

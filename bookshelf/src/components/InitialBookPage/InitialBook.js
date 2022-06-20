@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './InitialBook.css';
 import { Card, Row, Col, Container } from "react-bootstrap";
 import book1 from './book1_tqs.jpg';
@@ -7,27 +7,32 @@ import '../SearchBar/./SearchBar.css';
 import { BsSearch } from 'react-icons/bs';
 
 
-function InitiaBook() {
-    const  [data_stats, setData] = React.useState([]);
+
+function InitiaBook({category}) {
+
+    const  [data_stats, setData] = useState([]);
     const books = []
     
-    const [title, setTitle] = React.useState("");
-    React.useEffect(() => {
-            api.get('books/Books/').then(res => {
+    const [title, setTitle] = useState("");
+
+    //const [categories, setCategories] = useState(["Fantasy","Horror","Science_Fiction"]);
+
+
+    useEffect(() => {
+        console.log("Category changed:", category)
+        api.get('books/Books/').then(res => {
             setData(res.data);
-            console.log("res", res);
         });
-    },[data_stats]);
-    console.log(title);
+    },[category]);
 
 
-    console.log(data_stats);
     
     data_stats.forEach((book, index) => {
         
         books.push(
             <>
-            {title === "" ? (
+            {title === "" ? 
+            (
             <>
             <div>
             <div className="wrapinho">
@@ -47,7 +52,8 @@ function InitiaBook() {
 
             </div>
             </>
-            ) : (
+            ) : 
+            (
                 <>
             {book?.title.slice(0, title.length) === title && (
             <div>
@@ -96,7 +102,6 @@ function InitiaBook() {
             <div className="row">
                 <div className="grid">
                     {books}
-           
                 </div> 
             </div>  
             

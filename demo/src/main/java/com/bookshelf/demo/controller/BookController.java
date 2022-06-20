@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bookshelf.demo.model.Book;
+import com.bookshelf.demo.model.Category;
 import com.bookshelf.demo.services.BookService;
 
 @RestController
@@ -64,6 +65,10 @@ public class BookController {
     public Optional<Book> getBookTitle(@RequestParam(value = "title") String title){
         return bookService.getBookByTitle(title);
     }
-    
+
+    @GetMapping("/categories")
+    public List<Category> allCategories(){
+        return bookService.getAllCategories();
+    }
 
 }
