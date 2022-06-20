@@ -21,15 +21,26 @@ public class CartProductService {
         return cartProductRepository.save(cartProduct);
     }
 
-    public List<Book> getCartProducts(Long cart_id){
+    public List<Book> getCartProducts(Long user_id){
         List<Book> books = new ArrayList<>();
         for (CartProduct cartProduct: cartProductRepository.findAll()){
-            if(cartProduct.getCart().getId() == cart_id){
+            if(cartProduct.getCart().getClient().getId() == user_id){
                 books.add(cartProduct.getBook());
         }
         
         }
         return books;
+    }
+
+    public Double getTotalPrice(Long user_id){
+        Double total_price = 0.0;
+        for (CartProduct cartProduct: cartProductRepository.findAll()){
+            if(cartProduct.getCart().getClient().getId() == user_id){
+                total_price = total_price + cartProduct.getBook().getPrice();
+        }
+    }
+        return total_price;
+
     }
 
     

@@ -21,14 +21,19 @@ public class CartProductController {
     @Autowired
     private CartProductService cartProductService;
 
-    @GetMapping("books/{cart_id}")
-    public List<Book> getProducts(@PathVariable(value = "cart_id") Long cart_id){
+    @GetMapping("books/{user_id}")
+    public List<Book> getProducts(@PathVariable(value = "user_id") Long user_id){
         List<Book> cart_books= new ArrayList<>();
         // for(CartProduct cartProduct: cartService.getProducts(client_id)){
         //     cart_books.add(cartProduct.getBook());
         // }
 
-        return cartProductService.getCartProducts(cart_id);
+        return cartProductService.getCartProducts(user_id);
+    }
+
+    @GetMapping("totalrice/{user_id}")
+    public Double getTotalPrice(@PathVariable(value = "user_id") Long user_id){
+        return cartProductService.getTotalPrice(user_id);
     }
     
 }
