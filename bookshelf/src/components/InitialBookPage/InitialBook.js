@@ -31,7 +31,6 @@ function InitiaBook() {
     const  [data_stats, setData] = React.useState([]);
     const books = []
     const user_id = JSON.parse(localStorage.getItem("user")).id;
-    var book_id = 0;
     const [title, setTitle] = React.useState("");
     React.useEffect(() => {
            api.get('books/Books/').then(res => {
@@ -41,12 +40,11 @@ function InitiaBook() {
     },[]);
     console.log(title);
 
-    api.post(`/cart/addCart/${1}/${1}`)
 
     console.log(data_stats);
     
     function handleClick(index){
-        book_id = index;
+        api.post(`/cart/addCart/${user_id}/${index + 1}`)
         console.log("handle click,", index)
     }
     data_stats.forEach((book, index) => {
@@ -99,7 +97,6 @@ function InitiaBook() {
     })
     
     console.log("User_Id", user_id);
-    console.log("Book_Id", book_id);
 
     return (
         <>

@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import Topbar from '../TopBar/Topbar';
 import book1 from './book1_tqs.jpg';
 // import CartItem from './CartItem';
+import api from "./api";
 import './CartItem.css';
 
 function Cart()  {
     const books = JSON.parse(localStorage.getItem("orders"));
     localStorage.setItem("orders",  JSON.stringify(books))
     const books2 = []
+    const  [data_stats, setData] = React.useState([]);
+    const user_id = JSON.parse(localStorage.getItem("user")).id;
 
+    React.useEffect(() => {
+        api.get(`cartProducts/books/${user_id}/`).then(res => {
+        setData(res.data);
+        console.log("res", res);
+    });
+ },[]);
     function removeItem() {
         alert('Remove Item');
     }
@@ -17,7 +26,7 @@ function Cart()  {
     }
 
 
-    books.forEach((book, index) => {
+    data_stats.forEach((book, index) => {
         books2.push(
         <div className="cart-item">
 

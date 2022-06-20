@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -16,6 +17,7 @@ public class CartProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @JoinColumn(name = "cartProducts")
     @ManyToOne
     private Cart cart;
     
@@ -61,6 +63,10 @@ public class CartProduct {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+    @Override
+    public String toString() {
+        return "CartProduct [book=" + book + ", cart=" + cart + ", id=" + id + ", quantity=" + quantity + "]";
     }
 
     

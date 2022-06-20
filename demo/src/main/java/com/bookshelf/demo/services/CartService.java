@@ -47,7 +47,7 @@ public class CartService {
 
     public CartProduct addCart(Long client_id, Long book_id){
         Optional<Client> client = clientRepository.findById(client_id);
-        Cart cart = cartRepository.findByClient(client);
+        Cart cart = cartRepository.findByClient(client).get();
         System.out.println(cart);
         for(CartProduct cartProduct: cart.getCartProducts()){
             if(cartProduct.getBook().getId() == book_id){
@@ -60,7 +60,7 @@ public class CartService {
     }
 
     public List<CartProduct> getProducts(Long client_id){
-        return cartRepository.findByClient(clientRepository.findById(client_id)).getCartProducts();
+        return cartRepository.findByClient(clientRepository.findById(client_id)).get().getCartProducts();
     }
     
 }

@@ -32,8 +32,10 @@ public class Cart {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id")
     private Client client;  
-
-    @OneToMany
+    
+    @JoinColumn(name = "cart")
+    @OneToMany(fetch =
+    FetchType.LAZY)
     private List<CartProduct> cartProducts;
 
    
