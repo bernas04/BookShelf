@@ -37,10 +37,9 @@ public class CartController {
     @PostMapping("/addCart/{client_id}/{product_id}")
     public CartProduct addCart(@PathVariable(value = "client_id") Long client_id, @PathVariable(value = "product_id") Long product_id) throws IOException, InterruptedException{
         return cartService.addCart(client_id, product_id);
-
     }
 
-    @GetMapping("products/{client_id}")
+    @PostMapping("products/{client_id}")
     public List<CartProduct> getProducts(@PathVariable(value = "client_id") Long client_id){
         List<Book> cart_books= new ArrayList<>();
         // for(CartProduct cartProduct: cartService.getProducts(client_id)){

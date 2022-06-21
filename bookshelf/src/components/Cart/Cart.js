@@ -11,8 +11,8 @@ function Cart() {
     const books2 = []
     const [data_stats, setData] = React.useState([]);
     const [price, setPrice] = React.useState([]);
+    var book_id = null;
     const user_id = JSON.parse(localStorage.getItem("info")).id;
-
     React.useEffect(() => {
         api.get(`cartProducts/books/${user_id}/`).then(res => {
             setData(res.data);
@@ -25,7 +25,11 @@ function Cart() {
             console.log("res", res);
         });
     }, []);
-    function removeItem() {
+    
+    function removeItem(index) {
+        api.post(`cartProducts/removeBook/${index}`)
+        book_id = index;
+        console.log("BOOK_ID", index);
         alert('Remove Item');
     }
     function checkout() {
@@ -50,7 +54,7 @@ function Cart() {
                     </div>
                     <div className="butaozinho">
 
-                        <button className="button-3" onClick={removeItem}>Remove</button>
+                        <button className="button-3" onClick={()=>removeItem(index)}>Remove</button>
 
                     </div>
 
