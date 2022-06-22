@@ -57,6 +57,14 @@ public class Order {
         this.status = OrderStatus.REQUESTED;
     }
 
+    public void setClient(Client client){
+        this.user = client;
+    }
+
+    public Client getClient(){
+        return this.user;
+    }
+
     public Order(){}
 
 
@@ -108,6 +116,8 @@ public class Order {
         this.status = status;
     }
 
+
+
     // public int getRiderReview() {
     //     return this.riderReview;
     // }
@@ -136,5 +146,7 @@ public class Order {
             ", status='" + getStatus() + "'" +
             "}";
     }
+
+    
 
 }

@@ -84,6 +84,22 @@ public class Client {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+    
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
 
     public String getUsername() {
         return username;

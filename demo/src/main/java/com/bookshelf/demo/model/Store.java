@@ -31,6 +31,9 @@ public class Store {
 
     private Double latitude, longitude;
 
+    public Store(){
+        
+    }
     public Store(String name, Double latitude, Double longitude) {
         this.name = name;
         this.latitude = latitude;

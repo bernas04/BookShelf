@@ -27,6 +27,9 @@ public class CartProductService {
         return cartProductRepository.save(cartProduct);
     }
 
+    public List<CartProduct> getCartProducts(){
+        return cartProductRepository.findAll();
+    }
     public List<Book> getCartProducts(Long user_id) {
         List<Book> books = new ArrayList<>();
         for (CartProduct cartProduct : cartProductRepository.findAll()) {
